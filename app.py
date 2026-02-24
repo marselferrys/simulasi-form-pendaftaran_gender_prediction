@@ -60,7 +60,7 @@ st.text_input("NIM", placeholder="121140xxx", key="nim_input")
 
 st.selectbox(
     "Program Studi", 
-    [
+    ["Pilih Program Studi",
   "Teknik Informatika",
   "Sains Data",
   "Fisika",
