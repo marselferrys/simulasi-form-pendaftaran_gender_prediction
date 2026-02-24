@@ -125,7 +125,7 @@ if st.button("💾 Submit Pendaftaran", type="primary", use_container_width=True
 
     # Validasi
     if not nama or not nim or not gender or not prodi:
-        st.error("❌ Gagal: Pastikan Nama, NIM, dan Jenis Kelamin telah terisi!")
+        st.error("❌ Gagal: Pastikan Nama, NIM, Prodi, dan Jenis Kelamin telah terisi!")
     else:
         # Tampilan pesan sukses yang rapi
         st.success(f"""
