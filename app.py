@@ -45,7 +45,7 @@ def autofill_gender():
 # ANTARMUKA FORMULIR PENDAFTARAN (UI)
 # ==========================================
 
-st.title("🎓 Form Pendaftaran Mahasiswa Baru")
+st.title("🎓 Form Pendaftaran UKM Coding Club ITERA")
 st.markdown("Silakan lengkapi data diri di bawah ini dengan benar.")
 
 # Input Nama -> Parameter on_change akan memicu fungsi autofill_gender saat user menekan Enter/keluar dari kolom
