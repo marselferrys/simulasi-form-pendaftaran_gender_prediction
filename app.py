@@ -1,7 +1,7 @@
 import streamlit as st
 from gradio_client import Client
 
-# Konfigurasi halaman (Wajib diletakkan paling atas)
+# Konfigurasi halaman
 st.set_page_config(page_title="Form Pendaftaran", page_icon="🎓")
 
 # 1. Inisialisasi Client (Gunakan cache agar tidak reload/koneksi ulang terus menerus)
@@ -14,14 +14,14 @@ client = get_hf_client()
 
 # 2. Fungsi Callback untuk Auto-fill
 def autofill_gender():
-    # Mengambil nilai nama dari session_state (apa yang sedang diketik user)
+    # Mengambil nilai nama dari session_state
     nama = st.session_state.nama_input
     
     if not nama or len(nama.strip()) < 3:
         return
 
     try:
-        # Menembak API Hugging Face (Gunakan fn_index=0 untuk menghindari error)
+        # Menembak API Hugging Face 
         result = client.predict(
                 nama, # Mengirim langsung isi dari in_nama
                 api_name="/predict"
@@ -37,7 +37,7 @@ def autofill_gender():
             st.session_state.gender_input = "Perempuan"
 
     except Exception as e:
-        # Jika API gagal, kita biarkan saja (user bisa milih manual)
+        # Jika API gagal, kita biarkan saja 
         pass 
 
 
@@ -105,7 +105,7 @@ st.selectbox(
     key="prodi_input"
 )
 
-# Radio Button Jenis Kelamin (Index=None agar awalnya kosong sebelum sistem menebak)
+# Radio Button Jenis Kelamin 
 st.radio(
     "Jenis Kelamin", 
     ["Laki-laki", "Perempuan"], 
